@@ -10,7 +10,28 @@
 </head>
 <body>
     <div id="vue-app">
-        <h1>{{ name }}</h1>
+        <h1>{{ greet('afternoon') }}</h1>
+        <p>Name: {{ name }}</p>
+        <p>Job: {{ job }}</p>
+        <hr>
+
+        <h1>Data binding</h1>
+        <a v-bind:href="website" >Net ninja tutorial for VUE.js</a>
+        <input text="Name" v-bind:value="name" />
+        <p v-html="websiteTag"></p>
+
+        <hr>
+        <h1>Events</h1>
+        <button @click="addYear(1)">Add a Year</button>
+        <button v-on:click="removeYear(1)">Subtract a Year</button>
+        <button @dblclick="addYear(10)">Add 10 Years</button>
+        <button v-on:dblclick="removeYear(10)">Subtract 10 Year</button>
+        <p>My age is {{ age }}</p>
+
+        <div id="canvas" v-on:mousemove="updateXY">
+            {{ x }}, {{ y }}
+        </div>
+
     </div>
     
 
