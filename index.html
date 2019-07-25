@@ -10,19 +10,9 @@
 </head>
 <body>
     <div id="vue-app">
-        <h1>{{ greet('afternoon') }}</h1>
-        <p>Name: {{ name }}</p>
-        <p>Job: {{ job }}</p>
-        <hr>
-
-        <h1>Data binding</h1>
-        <a v-bind:href="website" >Net ninja tutorial for VUE.js</a>
-        <input text="Name" v-bind:value="name" />
-        <p v-html="websiteTag"></p>
-
-        <hr>
+        
         <h1>Events</h1>
-        <button @click="addYear(1)">Add a Year</button>
+        <button @click.once="addYear(1)">Add a Year</button> <!-- only once event listener --> 
         <button v-on:click="removeYear(1)">Subtract a Year</button>
         <button @dblclick="addYear(10)">Add 10 Years</button>
         <button v-on:dblclick="removeYear(10)">Subtract 10 Year</button>
@@ -32,6 +22,16 @@
             {{ x }}, {{ y }}
         </div>
 
+        <a v-on:click.prevent="click" href="http://www.thenetninja.co.uk">net ninja</a>
+
+    </div>
+    <hr />
+    <div id="vue-app-keyboard"> 
+        <h1>Keyboard events</h1>
+        <label>Name:</label>
+        <input type="text" v-on:keyup="logName" />
+        <label>Age: </label>
+        <input type="text" v-on:keyup="logAge" />
     </div>
     
 
