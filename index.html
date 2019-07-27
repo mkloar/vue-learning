@@ -10,7 +10,13 @@
 </head>
 <body>
     <div id="vue-app">
-        
+        <h1>Conditionals</h1>
+        <button v-on:click="error = !error">Toggle Error</button>
+        <button v-on:click="success = !success">Toggle Success</button>
+        <!---<p v-if="error" v-bind:class="{error:error}">Error accured</p>
+        <p v-else-if="success" v-bind:class="{success: success}">Success</p> -->
+        <p v-show="error">There has been an error</p> <!--show only if error is true-->
+        <p v-show="success">Success</p>
     </div>
     
 
