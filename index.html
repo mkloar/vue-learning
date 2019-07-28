@@ -10,7 +10,33 @@
 </head>
 <body>
     <div id="vue-app">
-        
+        <h1>Looping through lists</h1>
+        <ul>
+            <li v-for="character in characters">{{ character }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(ninja, index) in ninjas">{{ index }} - {{ ninja.name }}, {{ ninja.age }}</li>
+        </ul>
+
+        <div v-for="(ninja, index) in ninjas">
+            <h3>{{ index }} . {{ ninja.name }}</h3>
+            <p>{{ ninja.age }}</p>
+        </div>
+        <!-- output what's inside template -->
+        <template v-for="(ninja, index) in ninjas">
+            <h3>{{ index }} . {{ ninja.name }}</h3>
+            <p>{{ ninja.age }}</p>
+        </template>
+        <hr>
+        <!-- key value pair -->
+        <template v-for="ninja in ninjas">
+            <div v-for="(val,key) in ninja">
+                <p>{{ key }} - {{ val }}</p>
+                
+            </div>
+            <hr>
+        </template>
     </div>
     
 
